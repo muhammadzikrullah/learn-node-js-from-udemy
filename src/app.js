@@ -7,6 +7,8 @@ const forecast = require('./utils/forecast')
 // initialize express app
 const app = express()
 
+const port = process.env.PORT || 3000
+
 //define path of dir
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -108,6 +110,6 @@ app.get('*', (req, res) => {
 })
 
 //main listen
-app.listen(3000, () => {
-    console.log('server up')
+app.listen(port, () => {
+    console.log('server up on PORT' + port)
 })
